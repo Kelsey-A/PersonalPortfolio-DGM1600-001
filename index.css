@@ -1,5 +1,6 @@
 * {
     margin: 0; 
+    font-family: "Bahnschrift", sans-serif;
 }
 
 html { 
@@ -16,7 +17,7 @@ display:flex;
 position:fixed;
 justify-content: flex-end;
 width: 100%;
-background-color: #544c7b;
+background-color: #590202;
 }
 
 .nav-list {
@@ -29,20 +30,33 @@ background-color: #544c7b;
     padding: 1.5rem;
     display: block;
     font-size: xx-large;
-    color: cornsilk;
+    color: #F1F2E9;
+    transition: transform 0.3s ease-out;
 }
 
 .nav-list a:hover {
-    background-color: #766e9d;
+    background-color:#691313;
+    transform: translateY(10px);
 }
+
 
 #welcome-section {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #6495ed;
+    background-color:#F1F2E9;
     height: 100vh
+}
+
+#welcome-section h1{
+    font-size: 4rem;
+    color: #010440;
+}
+
+#welcome-section h4{
+    font-size: 2rem;
+    color: #010440;
 }
 
 .projects-grid {
@@ -50,7 +64,12 @@ background-color: #544c7b;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    background-color: #ed8c64;
+    background-color:#010440;
+}
+.projects-grid div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .project-tile {
@@ -60,7 +79,16 @@ background-color: #544c7b;
 figcaption {
     text-align: center;
     font-size: x-large;
-    color: #555555;
+    color: #F1F2E9;
+    text-align: center;
+    position: relative;
+    top: -20px;
+    background-color: rgba(3, 3, 3, 0.5);
+    padding: 0.5rem;
+}
+
+figcaption a:hover {
+    background-color:#691313;
 }
 
 #contact {
@@ -69,17 +97,19 @@ figcaption {
     justify-content: center;
     align-items: center;
     height: 20rem;
-    background-color: cornflowerblue;
+    background-color:#F1F2E9;
 }
 
 #contact h1 {
     font-size: 4rem;
     padding: 4rem 0;
+    color: #590202;
 }
 
 #contact p {
     font-size: 2rem;
     padding-bottom: 2rem;
+    color: #590202;
 }
 
 #contact div {
@@ -92,7 +122,7 @@ figcaption {
     margin: 0 2rem;
     font-size: x-large;
     transition: transform 0.3s ease-out;
-    color: darkslateblue;
+    color:#0D0D0D;
 }
 
 #contact div a:hover {
@@ -104,16 +134,34 @@ footer {
     justify-content: center;
     padding: 1rem;
     font-size: 1.5rem;
-    background-color: darkblue;
+    background-color:#020659;
 }
+
+footer p {
+    color: #F1F2E9;
+    font-size: 1rem;
+}
+
+@media (max-width: 75em) {
+    nav {
+        font-size: 80%;
+    }
+}
+
+@media (max-width: 61.25em) {
+    nav {
+        font-size: 60%;
+    }
+}
+
 @media (max-width: 75em) {
     html {
         font-size: 80%;
     }
 }
+
 @media (max-width: 61.25em) {
     html {
-        font-size: 40%;
+        font-size: 60%;
     }
-
 }
