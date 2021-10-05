@@ -9,7 +9,6 @@ html {
 
 a {
     text-decoration: none;
-    color: #dddddd;
 }
 
 #navbar { 
@@ -30,6 +29,7 @@ background-color: #544c7b;
     padding: 1.5rem;
     display: block;
     font-size: xx-large;
+    color: cornsilk;
 }
 
 .nav-list a:hover {
@@ -37,11 +37,16 @@ background-color: #544c7b;
 }
 
 #welcome-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background-color: #6495ed;
     height: 100vh
 }
 
 .projects-grid {
+    padding: 4.5rem 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -59,6 +64,56 @@ figcaption {
 }
 
 #contact {
-    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 20rem;
     background-color: cornflowerblue;
+}
+
+#contact h1 {
+    font-size: 4rem;
+    padding: 4rem 0;
+}
+
+#contact p {
+    font-size: 2rem;
+    padding-bottom: 2rem;
+}
+
+#contact div {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 4rem;
+}
+
+#contact div a {
+    margin: 0 2rem;
+    font-size: x-large;
+    transition: transform 0.3s ease-out;
+    color: darkslateblue;
+}
+
+#contact div a:hover {
+    transform: translateY(8px);
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    font-size: 1.5rem;
+    background-color: darkblue;
+}
+@media (max-width: 75em) {
+    html {
+        font-size: 80%;
+    }
+}
+@media (max-width: 61.25em) {
+    html {
+        font-size: 40%;
+    }
+
 }
