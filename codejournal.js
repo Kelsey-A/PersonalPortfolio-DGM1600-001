@@ -1,3 +1,7 @@
+var name; //global
+
+let foo; //a declared variable that can be changed
+
 //const bar; // a declared variable that cannot be changed - short for 'constant'
 
 const ANSWER = 42 // const is declared and initialized with the value 42
@@ -39,6 +43,17 @@ const myCar = {
     color: "red",
     year: "1965",
     vin: "324242hv4hvjjv23vhjh"
-}
+};
+
+myCar.numDoors = 4;
 
 // objects have curly brackets
+
+//Functions
+
+//they are like little engines that return a value
+//they have parentheses that contain arguments
+
+function myFunction() {
+    return "My greeting to you...";
+}
