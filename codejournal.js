@@ -57,3 +57,8 @@ myCar.numDoors = 4;
 function myFunction() {
     return "My greeting to you...";
 }
+
+//Arrow Functions
+
+//basic syntax is () => {}
+//or num => 'The Num'

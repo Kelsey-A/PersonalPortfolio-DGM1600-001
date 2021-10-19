@@ -1,4 +1,20 @@
-li {
-    color: purple;
-    font-size: xx-large;
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+figure {
+    background-color: blueviolet;
+}
+
+img {
+    border: 10 px solid blueviolet;
+}
+
+figcaption {
+    text-align: center;
+    font-size:xx-large;
+    background-color: blueviolet;
+    padding-bottom: .5em;
 }
