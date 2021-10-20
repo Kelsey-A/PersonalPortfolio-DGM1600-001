@@ -2,19 +2,23 @@ main {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    /*background-image: linear-gradient(to top, #550f6d, #500b73, #49097a, #400881, #330988, #2a2599, #1c39a9, #004bb8, #006cc8, #0086c4, #009cb4, #09aea3);*/
+    background-image: linear-gradient(to top, #330742, #320846, #310a49, #2f0c4d, #2d0e51, #2d155a, #2d1b62, #2c216b, #2b2d7b, #28398c, #1f459d, #0951ae);
 }
 
 figure {
-    background-color: blueviolet;
+    background-color: #441853;
 }
 
 img {
-    border: 10 px solid blueviolet;
+    border-width: 100px; 
+    border: solid; 
+    border-color: #441853;
 }
 
 figcaption {
     text-align: center;
     font-size:xx-large;
-    background-color: blueviolet;
+    background-color: #441853;
     padding-bottom: .5em;
 }
