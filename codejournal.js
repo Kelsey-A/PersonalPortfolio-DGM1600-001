@@ -62,3 +62,4 @@ function myFunction() {
 
 //basic syntax is () => {}
 //or num => 'The Num'
+
