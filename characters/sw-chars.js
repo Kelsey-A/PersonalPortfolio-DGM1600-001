@@ -8,16 +8,15 @@ const femaleButton = document.createElement('button')
 femaleButton.textContent = 'Female Characters'
 header.appendChild(maleButton)
 header.appendChild(femaleButton)
-mainBody.appendChild(header)
 
 const mainContent = document.querySelector('#main')
+
+document.body.insertBefore(header, mainContent)
 
 document.body.insertBefore(header)
 
 const maleCharacters = people.filter(person => person.gender === 'male')
-
 const femaleCharacters = people.filter(person => person.gender === 'female')
-
 
 console.log(maleCharacters)
 
