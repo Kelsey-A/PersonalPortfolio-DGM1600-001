@@ -3,6 +3,23 @@
     box-sizing: border-box;
 }
 
+header {
+    display: flex;
+    justify-content: space-around;
+    background-color: #333;
+    padding: 2em 0;
+}
+
+button {
+    font-size: x-large;
+    border-radius: 10px;
+    background-color: antiquewhite;
+}
+
+button:hover {
+    background-color: aqua;
+}
+
 #main {
     display: flex;
     flex-wrap: wrap;
