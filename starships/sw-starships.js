@@ -15,7 +15,7 @@ function populateNav(starships) {
         })
 
         anchorWrap.appendChild(listItem)
-        navList.appendChild(listItem)
+        navList.appendChild(anchorWrap)
     })
 }
 
