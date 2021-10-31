@@ -1,0 +1,14 @@
+html {
+    background-image: linear-gradient(to top, #330742, #320846, #310a49, #2f0c4d, #2d0e51, #2d155a, #2d1b62, #2c216b, #2b2d7b, #28398c, #1f459d, #0951ae);
+}
+body {
+    color: white;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    color: white;
+}

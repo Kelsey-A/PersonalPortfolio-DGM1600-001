@@ -3,6 +3,13 @@
     box-sizing: border-box;
 }
 
+html {
+/*background-image: linear-gradient(to top, #550f6d, #500b73, #49097a, #400881, #330988, #2a2599, #1c39a9, #004bb8, #006cc8, #0086c4, #009cb4, #09aea3);*/
+background-image: linear-gradient(to top, #330742, #320846, #310a49, #2f0c4d, #2d0e51, #2d155a, #2d1b62, #2c216b, #2b2d7b, #28398c, #1f459d, #0951ae);
+}
+
+/*fix other characters background*/
+
 header {
     display: flex;
     justify-content: space-around;
@@ -13,17 +20,19 @@ header {
 button {
     font-size: x-large;
     border-radius: 10px;
-    background-color: antiquewhite;
+    color: white;
+    background-color: #444;
 }
 
 button:hover {
-    background-color: blue;
+    background-color: black;
 }
 
 #main {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    color: white
 }
 
 figure {
