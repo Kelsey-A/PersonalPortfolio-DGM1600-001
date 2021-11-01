@@ -21,9 +21,16 @@ otherButton.textContent = 'Other Characters'
 
 otherButton.addEventListener ('click', () => populateDOM(otherCharacters))
 
+const allButton = document.createElement('button')
+allButton.textContent = 'All Characters'
+
+allButton.addEventListener ('click', () => populateDOM(people))
+
+
 header.appendChild(maleButton)
 header.appendChild(femaleButton)
 header.appendChild(otherButton)
+header.appendChild(allButton)
 
 document.body.insertBefore(header, mainContent)
 
@@ -34,6 +41,7 @@ const otherCharacters = people.filter((person) => {
     return person
     }
 })
+const allCharacters = people.filter(person => person.gender)
 
 
 function populateDOM(characters) {

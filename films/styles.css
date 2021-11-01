@@ -1,12 +1,12 @@
 /*html {
-    background-image: linear-gradient(to top, #550f6d, #500b73, #49097a, #400881, #330988, #2a2599, #1c39a9, #004bb8, #006cc8, #0086c4, #009cb4, #09aea3);*/
-/*}*/
+    background-image: linear-gradient(to top, #550f6d, #500b73, #49097a, #400881, #330988, #2a2599, #1c39a9, #004bb8, #006cc8, #0086c4, #009cb4, #09aea3);
+}*/
 
 main {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    color: white;
+    color: #CECECE;
 }
 
 figure {
