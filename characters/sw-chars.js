@@ -1,5 +1,5 @@
 import { people } from '../data/people.js'
-import { getLastNumber } from './utils/index.js'
+import { getLastNumber } from '../utils/index.js'
 
 const mainContent = document.querySelector('#main')
 

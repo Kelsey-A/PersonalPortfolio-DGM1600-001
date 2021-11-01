@@ -1,6 +1,11 @@
-/*html {
+html {
     background-image: linear-gradient(to top, #550f6d, #500b73, #49097a, #400881, #330988, #2a2599, #1c39a9, #004bb8, #006cc8, #0086c4, #009cb4, #09aea3);
-}*/
+}
+
+header {
+    display: flex;
+    justify-content: center;
+}
 
 main {
     display: flex;
@@ -10,18 +15,19 @@ main {
 }
 
 figure {
-    background-color: #441853;
+    background-color: black;
 }
 
 img {
     border-width: 100px; 
     border: solid; 
-    border-color: #441853;
+    border-color:black;
 }
 
 figcaption {
     text-align: center;
     font-size:xx-large;
-    background-color: #441853;
+    background-color:black;
     padding-bottom: .5em;
 }
+/* why are the film posters not aligned? 

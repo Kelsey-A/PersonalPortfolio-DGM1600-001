@@ -12,7 +12,7 @@ function populateNav(starships) {
         listItem.textContent = starship.name
         anchorWrap.addEventListener('click', () => {
             populateShipView(starship)
-        })
+        }) //Use something like this for films and characters?
 
         anchorWrap.appendChild(listItem)
         navList.appendChild(anchorWrap)
