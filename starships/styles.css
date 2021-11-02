@@ -1,6 +1,27 @@
+* {
+    margin: 0;
+    box-sizing: border-box ;
+}
+
+nav {
+    margin-left: 1em;
+}
+
 html {
     background-image: linear-gradient(to top, #330742, #320846, #310a49, #2f0c4d, #2d0e51, #2d155a, #2d1b62, #2c216b, #2b2d7b, #28398c, #1f459d, #0951ae);
 }
+
+#main {
+    display: flex;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
 body {
     color: #CECECE;
 }
@@ -11,4 +32,10 @@ ul {
 
 a {
     color: white;
+}
+
+.box {
+    background-color: #330742;
+    text-align: center;
+    
 }

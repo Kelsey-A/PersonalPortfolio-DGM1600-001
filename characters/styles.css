@@ -22,6 +22,7 @@ button {
     color: #0086c4;
     background-color: black;
     transition: transform 0.3s ease-out;
+    font-family: 'Open Sans', sans-serif;
 }
 
 button:hover {
@@ -33,7 +34,8 @@ button:hover {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    color: #CECECE
+    color: #CECECE;
+    font-family: 'Open Sans', sans-serif;
 }
 
 figure {
