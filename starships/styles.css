@@ -3,8 +3,19 @@
     box-sizing: border-box ;
 }
 
+header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: black;
+    font-size: 3em;
+    color: #CECECE
+}
+
 nav {
-    margin-left: 1em;
+    padding: 1em;
+    color: #0086c4;
+    background-color: black;
 }
 
 html {
@@ -13,6 +24,8 @@ html {
 
 #main {
     display: flex;
+    font-family: 'Open Sans', sans-serif;
+    color: #0086c4;
 }
 
 section {
@@ -22,20 +35,24 @@ section {
     width: 100%;
 }
 
-body {
-    color: #CECECE;
-}
-
 ul {
     list-style: none;
 }
 
 a {
-    color: white;
+    color: #0086c4;;
+}
+
+a:hover {
+    color: #CECECE;
+}
+
+footer {
+    padding: 1em;
 }
 
 .box {
     background-color: #330742;
     text-align: center;
-    
+    font-size: xx-large;
 }
