@@ -8,7 +8,7 @@ header {
     flex-wrap: wrap;
     justify-content: center;
     background-color: black;
-    font-size: 3em;
+    font-size: 2em;
     color: #CECECE
 }
 
@@ -49,6 +49,7 @@ a:hover {
 
 footer {
     padding: 1em;
+    color: #CECECE;
 }
 
 .box {
