@@ -26,11 +26,19 @@ allButton.textContent = 'All Characters'
 
 allButton.addEventListener ('click', () => populateDOM(people))
 
+const bestButton = document.createElement('button')
+bestButton.textContent = 'Best Character'
+
+bestButton.addEventListener ('click', () =>  {
+
+})
+
 
 header.appendChild(maleButton)
 header.appendChild(femaleButton)
 header.appendChild(otherButton)
 header.appendChild(allButton)
+header.appendChild(bestButton)
 
 document.body.insertBefore(header, mainContent)
 
