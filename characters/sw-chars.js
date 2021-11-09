@@ -29,9 +29,7 @@ allButton.addEventListener ('click', () => populateDOM(people))
 const bestButton = document.createElement('button')
 bestButton.textContent = 'Best Character'
 
-bestButton.addEventListener ('click', () =>  {
-
-})
+bestButton.addEventListener ('click', () => populateDOM('/Images/babyYoda.jpg'))
 
 
 header.appendChild(maleButton)

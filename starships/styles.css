@@ -31,7 +31,9 @@ html {
 section {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+    /* padding-top: 5em; */
+    /* align-items: center; */
     width: 100%;
 }
 

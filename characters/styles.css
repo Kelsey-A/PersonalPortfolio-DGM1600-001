@@ -3,9 +3,9 @@
     box-sizing: border-box;
 }
 
-html {
+/* html {
 background-image: linear-gradient(to top, #330742, #320846, #310a49, #2f0c4d, #2d0e51, #2d155a, #2d1b62, #2c216b, #2b2d7b, #28398c, #1f459d, #0951ae);
-}
+} */
 /*fix other characters background*/
 
 header {
@@ -35,6 +35,13 @@ button:hover {
     justify-content: center;
     color: #CECECE;
     font-family: 'Open Sans', sans-serif;
+    /* height: 100vh; */
+    /* background-image: linear-gradient(to top, #330742, #320846, #310a49, #2f0c4d, #2d0e51, #2d155a, #2d1b62, #2c216b, #2b2d7b, #28398c, #1f459d, #0951ae); */
+}
+
+body {
+    height: 100;
+    background-image: linear-gradient(to top, #330742, #320846, #310a49, #2f0c4d, #2d0e51, #2d155a, #2d1b62, #2c216b, #2b2d7b, #28398c, #1f459d, #0951ae);
 }
 
 figure {
