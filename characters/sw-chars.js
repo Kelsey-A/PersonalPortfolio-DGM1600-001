@@ -53,8 +53,8 @@ const allCharacters = people.filter(person => person.gender)
 
 
 function populateDOM(characters) {
-    // clear the page first, then populate
-    removeChildren(mainContent)
+
+removeChildren(mainContent)
 
 
 characters.forEach((element) => {

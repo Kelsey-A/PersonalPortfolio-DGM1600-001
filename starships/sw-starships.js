@@ -4,6 +4,7 @@ import {getLastNumber, removeChildren } from "../utils/index.js"
 const nav = document.querySelector('.nav')
 const navList = document.querySelector('.navList')
 const shipView = document.querySelector('.displaySection')
+//const shipCap = document.querySelector('.captionSection)
 
 const modal = document.querySelector('.modal')
 const closeButton = document.querySelector('.modal-close')
@@ -23,6 +24,7 @@ function populateNav(starships) {
         listItem.textContent = starship.name
         anchorWrap.addEventListener('click', () => {
             populateShipView(starship)
+            // populateShipCaption(starship)
         })
         anchorWrap.appendChild(listItem)
         navList.appendChild(anchorWrap)
@@ -33,13 +35,28 @@ populateNav(starships)
 
 function populateShipView(shipData) {
     removeChildren(shipView)
-    let shipImage = document.createElement('img')
+    let shipImage = document.createElement('img','figcaption')
     let shipNum = getLastNumber(shipData.url)
     shipImage.src = `https://starwars-visualguide.com/assets/img/starships/${shipNum}.jpg`
+
+    shipImage.textContent = starships.name
+    
     shipImage.addEventListener ('error', () => {
         shipImage.hidden = true
         modal.classList.toggle('is-active') 
         missingMessage.textContent = `The ship ${shipData.name} has no image available`
     })
+
     shipView.appendChild(shipImage)
 }
+
+// function populateShipCaption(shipName) {
+    // removeChildren(shipCap)
+
+    // let shipCaption = document.createElement('figcaption')
+    // shipCaption.textContent = starships.name
+
+    // shipCaption.src = `data/starships${starships.name}.js`
+    
+    // shipCap.appendChild(shipCaption)
+// }
