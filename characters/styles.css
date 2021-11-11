@@ -29,6 +29,12 @@ button:hover {
     transform: translateY(5px);
 }
 
+.myImage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 #main {
     display: flex;
     flex-wrap: wrap;

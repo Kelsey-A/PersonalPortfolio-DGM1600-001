@@ -26,17 +26,21 @@ allButton.textContent = 'All Characters'
 
 allButton.addEventListener ('click', () => populateDOM(people))
 
-const bestButton = document.createElement('button')
-bestButton.textContent = 'Best Character'
+// const bestButton = document.createElement('button')
+// bestButton.textContent = 'Best Character'
 
-bestButton.addEventListener ('click', () => populateDOM('/Images/babyYoda.jpg'))
+// var myImage = new Image(1000);
+// myImage.src = '/Images/babyYoda.jpg';
+// document.body.appendChild(myImage);
+
+// bestButton.addEventListener ('click', () => populateDOM(myImage)) 
 
 
 header.appendChild(maleButton)
 header.appendChild(femaleButton)
 header.appendChild(otherButton)
 header.appendChild(allButton)
-header.appendChild(bestButton)
+// header.appendChild(bestButton)
 
 document.body.insertBefore(header, mainContent)
 

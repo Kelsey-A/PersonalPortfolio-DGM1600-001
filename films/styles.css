@@ -4,27 +4,17 @@
     box-sizing: border-box;
 }
 
-/*@font-face {
-    font-family: 'star_jedi';
-    src: url('webfontkit/starjedi-webfont.woff2') format('woff2'),
-    url('webfontkit/starjedi-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
-} */
-
 html {
     background-image: linear-gradient(to top, #550f6d, #500b73, #49097a, #400881, #330988, #2a2599, #1c39a9, #004bb8, #006cc8, #0086c4, #009cb4, #09aea3);
 }
 
 header {
+    padding-top: 2rem;
     display: flex;
     justify-content: center;
     font-size: 4em;
     font-family: 'Impact', sans-serif;
-
-    /*font-family: 'star_jedi';*/
-
+    font-family: 'Audiowide', 'Open Sans', sans-serif;
 }
 
 main {
@@ -33,7 +23,7 @@ main {
     justify-content: center;
     align-items: center;
     color: #CECECE;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Audiowide', 'Open Sans', sans-serif;
     color: #0086c4;
 
 }
@@ -41,23 +31,18 @@ main {
 figure {
     background-color: black;
     margin: 2.5em;
-    border-radius: 10px;
-    /* border-width: 10em;
-    border-radius: 5px; 
-    border: solid; 
-    border-color:#550f6d; */
     box-shadow: 10px 5px 5px rgb(41, 41, 41);
+    border:solid;
+    border-color:#550f6d ;
+    border-width: .25rem;
+    border-radius: 5px;
+
 }
 
-/* img {
-    border-width: 100px; 
-    border: solid; 
-    border-color:black;
-} */
 
 figcaption {
     text-align: center;
-    font-size:xx-large;
+    font-size:1.5rem;
     background-color:black;
     padding-bottom: .5em;
 }
