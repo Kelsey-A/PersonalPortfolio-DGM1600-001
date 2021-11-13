@@ -1,11 +1,23 @@
 * {
     margin: 0;
     box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    font-size: xx-large;
+    padding: 1em;
+    background-color: black;
+    color: rgb(134, 134, 134);
+    margin-bottom: 1rem;
 }
 
 .senators {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 figure {
@@ -13,8 +25,26 @@ figure {
     display: flex;
     flex-direction: column;
     margin: 1em;
+    border:solid;
+    border-color: black ;
+    border-width: .5rem;
+    border-radius: 3px;
+    background-color: black;
 }
 
 figcaption {
     text-align: center;
+    background-color: black;
+    color: rgb(134, 134, 134);
+    padding-top: .4rem;
 }
+
+body {
+    background-color: rgb(78, 78, 78);
+}
+
+footer {
+    margin: 1rem;
+    font-size: small;
+}
+
