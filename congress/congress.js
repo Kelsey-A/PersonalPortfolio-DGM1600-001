@@ -8,8 +8,9 @@ const loyaltyHeading = document.querySelector('.mostLoyal')
 const seniorityHeading = document.querySelector('.seniority')
 
 function simplifiedMembers(chamberFilter) {
-        const filter = members.filter(member => chamberFilter ? member.short_title === chamberFilter : member)
-return filterdArray.map(senator => {
+        const filteredArray = members.filter((member) => 
+        chamberFilter ? member.short_title === chamberFilter : member)
+return filteredArray.map((senator) => {
     let  middleName = senator.middle_name ? ` ${senator.middle_name} ` : ` `
     return {
         id: senator.id,
@@ -25,29 +26,28 @@ return filterdArray.map(senator => {
 }
 
 function populateSenatorDiv(simpleSenators) {
-    simpleSenators.forEach(senator => {
+    simpleSenators.forEach((senator) => {
         const senFigure = document.createElement('figure')
         const figImg = document.createElement('img')
         const figCaption = document.createElement('figcaption')
 
         figImg.src = senator.imgURL
         figCaption.textContent = senator.name
+
         senFigure. appendChild(figImg)
         senFigure.appendChild(figCaption)
         senatorDiv.appendChild(senFigure)
-
     })
 
 }
 
-const filterSenators = (prop, value) => simplifiedMembers().filter(senator => senators[prop] === value)
+// const filterSenators = (prop, value) => simplifiedMembers().filter(senator => senators[prop] === value)
 
-const mostSeniorMember = simplifiedMembers().reduce((acc, senator) => {
-    return acc.seniority > senator.seniority ? acc : senator
-
-    seniorityHeading.textContent = `The most senior member of Congress is ${mostSeniorMember.name} who has been in congress for${mostSeniorMember.seniority} years.`
-
-}) //acc is an accumulator 
+const mostSeniorMember = simplifiedMembers().reduce((acc, senator) => 
+acc.seniority > senator.seniority ? acc : senator,
+)
+    seniorityHeading.textContent = `The most senior member of Congress is ${mostSeniorMember.name} who has been in congress for ${mostSeniorMember.seniority} years.`
+ //acc is an accumulator 
 
 const mostLoyal = simplifiedMembers().reduce((acc, senator) => {
     if(senator.loyaltyPct === 100) {
@@ -56,7 +56,7 @@ const mostLoyal = simplifiedMembers().reduce((acc, senator) => {
     return acc
 }, [])
 
-const cowardList = document.createElement('ol')
+const cowardList = document.createElement('ul')
 
 const spineless = mostLoyal.map(coward => {
     let listItem = document.createElement('li')
@@ -66,4 +66,4 @@ const spineless = mostLoyal.map(coward => {
 
 loyaltyHeading.appendChild(cowardList)
 
-populateSenatorDiv(simplifiedSenators())
+populateSenatorDiv(simplifiedMembers())
