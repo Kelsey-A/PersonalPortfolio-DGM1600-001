@@ -58,7 +58,6 @@ function populateDOM(characters) {
 
 removeChildren(mainContent)
 
-
 characters.forEach((element) => {
     const charFigure = document.createElement('figure')
     const charImg = document.createElement('img')
