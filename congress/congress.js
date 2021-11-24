@@ -10,17 +10,17 @@ const seniorityHeading = document.querySelector('.seniority')
 function simplifiedMembers(chamberFilter) {
         const filteredArray = members.filter((member) => 
         chamberFilter ? member.short_title === chamberFilter : member)
-return filteredArray.map((senator) => {
-    let  middleName = senator.middle_name ? ` ${senator.middle_name} ` : ` `
+return filteredArray.map(member => {
+    let  middleName = member.middle_name ? ` ${member.middle_name} ` : ` `
     return {
-        id: senator.id,
-        name: `${senator.first_name}${middleName}${senator.last_name}`,
-        party: senator.party,
-        gender: senator.gender,
-        seniority: +senator.seniority,
-        imgURL: `https://www.govtrack.us/static/legislator-photos/${senator.govtrack_id}-100px.jpeg`,
-        missedVotesPct: senator.missed_votes_pct,
-        loyaltyPct: senator.votes_with_party_pct,
+        id: member.id,
+        name: `${member.first_name}${middleName}${member.last_name}`,
+        party: member.party,
+        gender: member.gender,
+        seniority: +member.seniority,
+        imgURL: `https://www.govtrack.us/static/legislator-photos/${member.govtrack_id}-100px.jpeg`,
+        missedVotesPct: member.missed_votes_pct,
+        loyaltyPct: member.votes_with_party_pct,
     }
 })
 }
@@ -40,6 +40,16 @@ function populateSenatorDiv(simpleSenators) {
     })
 
 }
+
+// const republicans = document.querySelector('#republicans')
+// republicans.addEventListener('click', () => {
+//     populateSenatorDiv(republicanParty(representatives, 'R'))
+// })
+
+// const senatorButton = document.querySelector('#senatorButton')
+// senatorButton.addEventListener('click', () => {
+//     populateSenatorDiv ()
+// })
 
 // const filterSenators = (prop, value) => simplifiedMembers().filter(senator => senators[prop] === value)
 
@@ -65,5 +75,10 @@ const spineless = mostLoyal.map(coward => {
 })
 
 loyaltyHeading.appendChild(cowardList)
+
+// const republicanParty = (chamber, party) => {
+//     return simplifiedMembers(chamber).filter(member => member.party === 'R')
+// }
+
 
 populateSenatorDiv(simplifiedMembers())
