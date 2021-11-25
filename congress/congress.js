@@ -1,5 +1,6 @@
 import { senators } from '../data/senators.js'
 import { representatives } from '../data/representatives.js'
+import { removeChildren } from '../utils/index.js'
 
 const members = [...senators, ...representatives] //spread operator is the modern way to combine arrays
 
@@ -9,24 +10,45 @@ const senatorDiv = document.querySelector('.senators')
 const loyaltyHeading = document.querySelector('.mostLoyal')
 const seniorityHeading = document.querySelector('.seniority')
 
-const senatorButton = document.querySelector('#senatorButton')
-senatorButton.addEventListener ('click', () => populateSenatorDiv(senators))
-Button.appendChild(senatorButton)
+
 
 const representativesButton = document.querySelector('#representativesButton')
-representativesButton.addEventListener ('click', () => populateSenatorDiv(representatives))
-Button.appendChild(representativesButton)
+representativesButton.addEventListener ('click', () => populateSenatorDiv(Reps))
+const Reps = simplifiedMembers().reduce((acc, senator) => {
+    if(senator.senRep === 'Rep.') {
+        acc.push(senator)
+    }
+    return acc
+}, [])
+
+const senatorButton = document.querySelector('#senatorButton')
+senatorButton.addEventListener ('click', () => populateSenatorDiv(Sens))
+const Sens = simplifiedMembers().reduce((acc, senator) => {
+    if(senator.senRep === 'Sen.') {
+        acc.push(senator)
+    }
+    return acc
+}, [])
 
 const republicanButton = document.querySelector('#republicanButton')
-const republicanParty = members.filter(members => members.party === 'R')
-republicanButton.addEventListener ('click', () => populateSenatorDiv(republicanParty))
-Button.appendChild(republicanButton)
+republicanButton.addEventListener('click', () => {
+    populateSenatorDiv(rParty)
+})
+const rParty = simplifiedMembers().reduce((acc, senator) => {
+    if(senator.party === 'R') {
+        acc.push(senator)
+    }
+    return acc
+}, [])
 
 const democratsButton = document.querySelector('#democratsButton')
-const democratsParty = members.filter(members => members.party === 'R')
-democratsButton.addEventListener ('click', () => populateSenatorDiv(democratsParty))
-Button.appendChild(democratsButton)
-
+democratsButton.addEventListener ('click', () => populateSenatorDiv(dParty))
+const dParty = simplifiedMembers().reduce((acc, senator) => {
+    if(senator.party === 'D') {
+        acc.push(senator)
+    }
+    return acc
+}, [])
 
 function simplifiedMembers(chamberFilter) {
         const filteredArray = members.filter((member) => 
@@ -42,36 +64,27 @@ return filteredArray.map(member => {
         imgURL: `https://www.govtrack.us/static/legislator-photos/${member.govtrack_id}-100px.jpeg`,
         missedVotesPct: member.missed_votes_pct,
         loyaltyPct: member.votes_with_party_pct,
+        senRep: member.short_title,
     }
 })
 }
 
 function populateSenatorDiv(simpleSenators) {
+    removeChildren(senatorDiv)
 
-    // removeChildren(senatorDiv)
-
-    simpleSenators.forEach((senator) => {
+    simpleSenators.forEach((member) => {
         const senFigure = document.createElement('figure')
         const figImg = document.createElement('img')
         const figCaption = document.createElement('figcaption')
 
-        figImg.src = senator.imgURL
-        figCaption.textContent = senator.name
+        figImg.src = member.imgURL
+        figCaption.textContent = member.name
 
         senFigure. appendChild(figImg)
         senFigure.appendChild(figCaption)
         senatorDiv.appendChild(senFigure)
     })
-
 }
-
-
-
-// const republicans = document.querySelector('#republicans')
-// republicans.addEventListener('click', () => {
-//     populateSenatorDiv(republicanParty(representatives, 'R'))
-// })
-
 
 // const filterSenators = (prop, value) => simplifiedMembers().filter(senator => senators[prop] === value)
 
@@ -97,10 +110,5 @@ const spineless = mostLoyal.map(coward => {
 })
 
 loyaltyHeading.appendChild(cowardList)
-
-// const republicanParty = (chamber, party) => {
-//     return simplifiedMembers(chamber).filter(member => member.party === party)
-// }
-
 
 populateSenatorDiv(simplifiedMembers())
