@@ -30,10 +30,27 @@ ul {
     color: #F1F2E9;
 }
 
+.youngDiv {
+    display: flex;
+    justify-content: center;
+}
+
+.donYoungImg {
+    width: 160px;
+    margin: 2rem;
+    border: solid;
+    border-color: #F1F2E9;
+    border-width: .5rem;
+    border-radius: 3px;
+    background-color: #F1F2E9;
+}
+
 .seniority {
     display: flex;
     justify-content: center;
     margin: 2rem;
+    margin-top: 0;
+    margin-bottom: 3rem;
     color: #F1F2E9;
 }
 

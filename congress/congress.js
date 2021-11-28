@@ -91,6 +91,7 @@ function populateSenatorDiv(simpleSenators) {
 const mostSeniorMember = simplifiedMembers().reduce((acc, senator) => 
 acc.seniority > senator.seniority ? acc : senator,
 )
+
     seniorityHeading.textContent = `The most senior member of Congress is ${mostSeniorMember.name} who has been in congress for ${mostSeniorMember.seniority} years.`
  //acc is an accumulator 
 
