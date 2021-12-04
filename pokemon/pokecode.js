@@ -52,7 +52,7 @@ function getAbilitiesArray(commaString) {
 }
 
 const morePokemon = document.querySelector ('.morePokemon')
-morePokemon.addEventListener('click, () => {
+morePokemon.addEventListener('click', () => {
     let startPoint = prompt('Which pokemon ID do you want to start with?')
     let howMany = prompt('How many more pokemon do you want to see?')
     loadPokemon(startPoint, howMany)
@@ -81,7 +81,7 @@ function populateCardFront(pokemon) {
   pokeFront.className = "cardFace front";
   const pokeImg = document.createElement("img");
   if(pokemon.id === 9001) {
-      pokeImg.src = '../Images/pokeballsmall.jpg'
+      pokeImg.src = '../Images/pokeBall.png'
   } else {
   pokeImg.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png`;
   }

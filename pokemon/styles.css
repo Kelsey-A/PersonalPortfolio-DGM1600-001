@@ -3,6 +3,35 @@
     box-sizing: border-box;
 }
 
+html {
+    background-color: #3D7DCA;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    margin: 2em;
+    color: #003A70
+}
+
+h4 {
+    margin: 1rem;
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0rem 6.5rem 1rem 6.5rem;
+}
+button:hover {
+    background-color: #FFCB05;
+    transform: scale(1.1) translateY(3px);
+    transition: transform 0.3s ease-out;
+
+}
+
 .pokeGrid {
     display: flex;
     flex-wrap: wrap;
@@ -37,12 +66,18 @@
 }
 
 .front {
-    background: cadetblue;
+    background: #003A70;
 } 
+
+figcaption {
+    color:#4E8EDB;
+    display: flex;
+    justify-content: center;
+}
 /* applied to cardFace front*/
 
 .back {
-    background: crimson;
+    background: #FFCB05;
     transform: rotateY(180deg);
 }
 
