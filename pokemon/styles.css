@@ -20,13 +20,19 @@ h4 {
 }
 
 .buttons {
+    color: #003A70;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     margin: 0rem 6.5rem 1rem 6.5rem;
+    /* font-size: .3rem;
+    width: 3rem;
+    height: 3rem; */
 }
+
 button:hover {
     background-color: #FFCB05;
+    color: #003A70;
     transform: scale(1.1) translateY(3px);
     transition: transform 0.3s ease-out;
 

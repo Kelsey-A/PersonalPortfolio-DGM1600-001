@@ -22,11 +22,37 @@ function loadPokemon(offset = 0, limit = 25) {
   });
 }
 
+function choosePokemon(id = id) {
+    
+  getAPIData(
+    `https://pokeapi.co/api/v2/pokemon/${id}`
+  ).then(async (data) => {
+    console.log(data.results);
+    for (const pokemon of data.results) {
+      await getAPIData(pokemon.url).then((pokeData) =>
+        populatePokeCards(pokeData)
+      );
+    }
+  });
+}
+
 const pokeGrid = document.querySelector(".pokeGrid");
 const loadButton = document.querySelector(".loadPokemon");
 loadButton.addEventListener("click", () => {
     removeChildren(pokeGrid)
     loadPokemon()
+})
+
+const chooseButton = document.querySelector(".choosePokemon");
+chooseButton.addEventListener("click", () => {
+    removeChildren(pokeGrid)
+    choosePokemon()
+})
+
+chooseButton.addEventListener('click', () => {
+  let id = prompt('What is the ID of your Pokemon?')
+  let chosenPokemon = new Chosen(id)
+  populatePokeCards(chosenPokemon)
 })
 
 const newButton = document.querySelector('.newPokemon')
@@ -116,5 +142,11 @@ class Pokemon {
         this.weight = weight,
         this.abilities = abilities
     }
+}
+
+class Chosen {
+  constructor(id) {
+    this.id = id
+  }
 }
 
