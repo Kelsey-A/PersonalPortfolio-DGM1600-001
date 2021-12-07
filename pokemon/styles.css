@@ -4,7 +4,8 @@
 }
 
 html {
-    background-color: #3D7DCA;
+    /* background-color: #3D7DCA; */
+    background-color: #003A70;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -12,7 +13,7 @@ h1 {
     display: flex;
     justify-content: center;
     margin: 2em;
-    color: #003A70
+    color: #FFCB05
 }
 
 h4 {
@@ -24,9 +25,9 @@ h4 {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin: 0rem 6.5rem 1rem 6.5rem;
-    /* font-size: .3rem;
-    width: 3rem;
+    margin: 0rem .5rem 1rem .5rem;
+    font-size: .3rem;
+    /* width: 4rem;
     height: 3rem; */
 }
 
@@ -38,9 +39,14 @@ button:hover {
 
 }
 
+#typeButtons {
+    width: .3rem;
+}
+
 .pokeGrid {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .scene {
@@ -71,19 +77,20 @@ button:hover {
     transform: rotateY(180deg)
 }
 
-.front {
-    background: #003A70;
-} 
+figcaption::first-letter {
+    text-transform: capitalize;
+    font-size: 150%;
+}
 
 figcaption {
-    color:#4E8EDB;
-    display: flex;
-    justify-content: center;
+    color:#003A70;
+    text-align: center;
+    padding-top: .7rem;
+    line-height: 3em;
 }
-/* applied to cardFace front*/
 
 .back {
-    background: #FFCB05;
+    /* background: #FFCB05; */
     transform: rotateY(180deg);
 }
 
