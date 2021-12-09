@@ -47,12 +47,14 @@ newButton.addEventListener("click", () => {
   let pokeAbilities = prompt(
     "What abilities does your Pokemon have? (use a comma separated list)"
   )
+  let pokeColor = prompt("What type is your Pokemon? Grass, fire, water, or bug? (Choose one, type lowercase)")
 
   let newPokemon = new Pokemon(
     pokeName,
     pokeHeight,
     pokeWeight,
-    getAbilitiesArray(pokeAbilities)
+    getAbilitiesArray(pokeAbilities),
+    pokeColor
   )
   console.log(newPokemon)
   populatePokeCards(newPokemon)
@@ -113,10 +115,12 @@ function populateCardFront(pokemon) {
   pokeCaption.textContent = `${pokemon.name}`
   pokeFront.appendChild(pokeImg)
   pokeFront.appendChild(pokeCaption)
-
+if (pokemon.id === 9001) {
+typesBackground(newButton.pokeColor, pokeFront)
+} else {
   typesBackground(pokemon, pokeFront)
-
-  return pokeFront
+}
+return pokeFront
 }
 
 function typesBackground(pokemon, card) {
@@ -160,12 +164,13 @@ pokeBack.appendChild(label)
 }
 
 class Pokemon {
-    constructor(name, height, weight, abilities) {
+    constructor(name, height, weight, abilities, color) {
         this.id = 9001,
         this.name = name,
         this.height = height,
         this.weight = weight,
-        this.abilities = abilities
+        this.abilities = abilities,
+        this.color = color
     }
 }
 
