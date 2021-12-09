@@ -1,3 +1,5 @@
+//go to 01:04 - 01:04:30 12/9/2021
+
 import { removeChildren } from "../utils/index.js"
 
 function getAPIData(url) {
@@ -21,16 +23,44 @@ function loadPokemon(offset = 0, limit = 49) {
   })
 }
 
+const allPokemon = getAllSimplePokemon()
+
+function getAllSimplePokemon() {
+  const allPokemon = []
+  getAPIData(`https://pokeapi.co/api/v2/pokemon?limit=1118&offset=0`).then(
+    async (data) => {
+      console.log(data.results.length)
+      for (const pokemon of data.results) {
+        await getAPIData(pokemon.url).then((pokeData) => {
+          const mappedPokemon = {
+            abilities: pokeData.abilities,
+            height: pokeData.height,
+            id: pokeData.id,
+            name: pokeData.name,
+            types: pokeData.types,
+            weight: pokeData.weight,
+          }
+          allPokemon.push(mappedPokemon)
+        })
+      }
+    }
+  )
+  return allPokemon
+}
+
+function getAllPokemonByType(type) {
+  return allPokemon.filter((pokemon) => pokemon.types[0].type.name === type)
+}
+
 const chooseButton = document.querySelector(".choosePokemon")
 
-chooseButton.addEventListener('click', () => {
+chooseButton.addEventListener("click", () => {
   removeChildren(pokeGrid)
-  let id = prompt('What is the ID of your Pokemon?')
+  let id = prompt("What is the ID of your Pokemon?")
   getAPIData(`https://pokeapi.co/api/v2/pokemon/${id}`).then((chosen) =>
-  populatePokeCards(chosen)
+    populatePokeCards(chosen)
   )
 })
-
 
 const pokeGrid = document.querySelector(".pokeGrid")
 const loadButton = document.querySelector(".loadPokemon")
@@ -41,33 +71,47 @@ loadButton.addEventListener("click", () => {
 
 const newButton = document.querySelector(".newPokemon")
 newButton.addEventListener("click", () => {
+  removeChildren(pokeGrid)
   let pokeName = prompt("What is the name of your Pokemon?")
-  let pokeHeight = prompt("What is the height of your Pokemon?")
+  let pokeHeight = prompt("How many feet tall is your Pokemon?")
   let pokeWeight = prompt("How many kilograms is your Pokemon?")
   let pokeAbilities = prompt(
     "What abilities does your Pokemon have? (use a comma separated list)"
   )
-  let pokeColor = prompt("What type is your Pokemon? Grass, fire, water, or bug? (Choose one, type lowercase)")
+  let pokeType = prompt(
+    "What type is your Pokemon? grass, fire, water, bug, etc. (Choose one, lowercase, space separator)"
+  )
 
   let newPokemon = new Pokemon(
     pokeName,
     pokeHeight,
     pokeWeight,
     getAbilitiesArray(pokeAbilities),
-    pokeColor
+    getTypesArray(pokeType)
   )
   console.log(newPokemon)
   populatePokeCards(newPokemon)
 })
 
 function getAbilitiesArray(commaString) {
-  let tempArray = commaString.split(',')
+  let tempArray = commaString.split(",")
   console.log(tempArray)
   return tempArray.map((abilityName) => {
     return {
       ability: {
         name: abilityName,
-      }
+      },
+    }
+  })
+}
+
+function getTypesArray(spacedString) {
+  let tempArray = spacedString.split(" ")
+  return tempArray.map((typeName) => {
+    return {
+      type: {
+        name: typeName,
+      },
     }
   })
 }
@@ -82,6 +126,127 @@ morePokemon.addEventListener("click", () => {
 const grassButton = document.querySelector(".grassButton")
 grassButton.addEventListener("click", () => {
   removeChildren(pokeGrid)
+  const allByType = getAllPokemonByType("grass")
+  allByType.forEach((item) => populatePokeCards(item))
+})
+
+const fireButton = document.querySelector(".fireButton")
+fireButton.addEventListener("click", () => {
+  removeChildren(pokeGrid)
+  const allByType = getAllPokemonByType("fire")
+  allByType.forEach((item) => populatePokeCards(item))
+})
+
+const waterButton = document.querySelector(".waterButton")
+waterButton.addEventListener("click", () => {
+  removeChildren(pokeGrid)
+  const allByType = getAllPokemonByType("water")
+  allByType.forEach((item) => populatePokeCards(item))
+})
+
+const bugButton = document.querySelector(".bugButton")
+bugButton.addEventListener("click", () => {
+  removeChildren(pokeGrid)
+  const allByType = getAllPokemonByType("bug")
+  allByType.forEach((item) => populatePokeCards(item))
+})
+
+const normalButton = document.querySelector(".normalButton")
+normalButton.addEventListener("click", () => {
+  removeChildren(pokeGrid)
+  const allByType = getAllPokemonByType("normal")
+  allByType.forEach((item) => populatePokeCards(item))
+})
+
+const flyingButton = document.querySelector(".flyingButton")
+flyingButton.addEventListener("click", () => {
+  removeChildren(pokeGrid)
+  const allByType = getAllPokemonByType("flying")
+  allByType.forEach((item) => populatePokeCards(item))
+})
+
+const poisonButton = document.querySelector(".poisonButton")
+poisonButton.addEventListener("click", () => {
+  removeChildren(pokeGrid)
+  const allByType = getAllPokemonByType("poison")
+  allByType.forEach((item) => populatePokeCards(item))
+})
+
+const electricButton = document.querySelector(".electricButton")
+electricButton.addEventListener("click", () => {
+  removeChildren(pokeGrid)
+  const allByType = getAllPokemonByType("electric")
+  allByType.forEach((item) => populatePokeCards(item))
+})
+
+const ghostButton = document.querySelector(".ghostButton")
+ghostButton.addEventListener("click", () => {
+  removeChildren(pokeGrid)
+  const allByType = getAllPokemonByType("ghost")
+  allByType.forEach((item) => populatePokeCards(item))
+})
+
+const psychicButton = document.querySelector(".psychicButton")
+psychicButton.addEventListener("click", () => {
+  removeChildren(pokeGrid)
+  const allByType = getAllPokemonByType("psychic")
+  allByType.forEach((item) => populatePokeCards(item))
+})
+
+const groundButton = document.querySelector(".groundButton")
+groundButton.addEventListener("click", () => {
+  removeChildren(pokeGrid)
+  const allByType = getAllPokemonByType("ground")
+  allByType.forEach((item) => populatePokeCards(item))
+})
+
+const rockButton = document.querySelector(".rockButton")
+rockButton.addEventListener("click", () => {
+  removeChildren(pokeGrid)
+  const allByType = getAllPokemonByType("rock")
+  allByType.forEach((item) => populatePokeCards(item))
+})
+
+const iceButton = document.querySelector(".iceButton")
+iceButton.addEventListener("click", () => {
+  removeChildren(pokeGrid)
+  const allByType = getAllPokemonByType("ice")
+  allByType.forEach((item) => populatePokeCards(item))
+})
+
+const fightingButton = document.querySelector(".fightingButton")
+fightingButton.addEventListener("click", () => {
+  removeChildren(pokeGrid)
+  const allByType = getAllPokemonByType("fighting")
+  allByType.forEach((item) => populatePokeCards(item))
+})
+
+const dragonButton = document.querySelector(".dragonButton")
+dragonButton.addEventListener("click", () => {
+  removeChildren(pokeGrid)
+  const allByType = getAllPokemonByType("dragon")
+  allByType.forEach((item) => populatePokeCards(item))
+})
+
+const darkButton = document.querySelector(".darkButton")
+darkButton.addEventListener("click", () => {
+  removeChildren(pokeGrid)
+  const allByType = getAllPokemonByType("dark")
+  allByType.forEach((item) => populatePokeCards(item))
+})
+
+const steelButton = document.querySelector(".steelButton")
+steelButton.addEventListener("click", () => {
+  removeChildren(pokeGrid)
+  const allByType = getAllPokemonByType("steel")
+  allByType.forEach((item) => populatePokeCards(item))
+})
+
+const fairyButton = document.querySelector(".fairyButton")
+fairyButton.addEventListener("click", () => {
+  removeChildren(pokeGrid)
+  const allByType = getAllPokemonByType("fairy")
+  allByType.forEach((item) => populatePokeCards(item))
 })
 
 function populatePokeCards(singlePokemon) {
@@ -115,12 +280,8 @@ function populateCardFront(pokemon) {
   pokeCaption.textContent = `${pokemon.name}`
   pokeFront.appendChild(pokeImg)
   pokeFront.appendChild(pokeCaption)
-if (pokemon.id === 9001) {
-typesBackground(newButton.pokeColor, pokeFront)
-} else {
   typesBackground(pokemon, pokeFront)
-}
-return pokeFront
+  return pokeFront
 }
 
 function typesBackground(pokemon, card) {
@@ -139,39 +300,41 @@ function typesBackground(pokemon, card) {
 }
 
 function populateCardBack(pokemon) {
-  const pokeBack = document.createElement("div");
-  pokeBack.className = "cardFace back";
-  const label = document.createElement("h4");
-  label.textContent = "Abilities:";
-  pokeBack.appendChild(label);
-  const abilityList = document.createElement("ul");
+  const pokeBack = document.createElement("div")
+  pokeBack.className = "cardFace back"
+  const label = document.createElement("h4")
+  label.textContent = "Abilities:"
+  const abilityList = document.createElement("ul")
   pokemon.abilities.forEach((abilityItem) => {
-    let listItem = document.createElement("li");
-    listItem.textContent = abilityItem.ability.name;
-    abilityList.appendChild(listItem);
-  });
-    const pokeTypes = document.createElement('ol')
+    let listItem = document.createElement("li")
+    listItem.textContent = abilityItem.ability.name
+    abilityList.appendChild(listItem)
+  })
+  const labelT = document.createElement("h4")
+  labelT.textContent = "Type:"
+  const pokeTypes = document.createElement("ol")
   pokemon.types.forEach((pokeType) => {
-    let typeItem = document.createElement('li')
+    let typeItem = document.createElement("li")
     typeItem.textContent = pokeType.type.name
     pokeTypes.appendChild(typeItem)
   })
-pokeBack.appendChild(label)
-  pokeBack.appendChild(abilityList);
+  pokeBack.appendChild(label)
+  pokeBack.appendChild(abilityList)
+  pokeBack.appendChild(labelT)
   pokeBack.appendChild(pokeTypes)
   typesBackground(pokemon, pokeBack)
-  return pokeBack;
+  return pokeBack
 }
 
 class Pokemon {
-    constructor(name, height, weight, abilities, color) {
-        this.id = 9001,
-        this.name = name,
-        this.height = height,
-        this.weight = weight,
-        this.abilities = abilities,
-        this.color = color
-    }
+  constructor(name, height, weight, abilities, types) {
+    ;(this.id = 9001),
+      (this.name = name),
+      (this.height = height),
+      (this.weight = weight),
+      (this.abilities = abilities),
+      (this.types = types)
+  }
 }
 
 function getPokeTypeColor(pokeType) {
@@ -187,7 +350,7 @@ function getPokeTypeColor(pokeType) {
       color = "#0000ff"
       break
     case "bug":
-      color = "#7fff00"
+      color = "#C6D16E"
       break
     case "normal":
       color = "#f5f5dc"
@@ -215,6 +378,21 @@ function getPokeTypeColor(pokeType) {
       break
     case "ice":
       color = "#96D9D6"
+      break
+    case "fighting":
+      color = "#C03028"
+      break
+    case "dragon":
+      color = "#7038F8"
+      break
+    case "dark":
+      color = "	#705848"
+      break
+    case "steel":
+      color = "#787887"
+      break
+    case "fairy":
+      color = "#EE99AC"
       break
     default:
       color = "#999999"
