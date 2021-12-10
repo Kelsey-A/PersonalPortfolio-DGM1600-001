@@ -278,8 +278,14 @@ function populateCardFront(pokemon) {
   }
   const pokeCaption = document.createElement("figcaption")
   pokeCaption.textContent = `${pokemon.name}`
+
+  const pokeID = document.createElement('h4')
+  pokeID.textContent = `ID: ${pokemon.id}`
+  
+  pokeFront.appendChild(pokeID)
   pokeFront.appendChild(pokeImg)
   pokeFront.appendChild(pokeCaption)
+
   typesBackground(pokemon, pokeFront)
   return pokeFront
 }
@@ -302,6 +308,7 @@ function typesBackground(pokemon, card) {
 function populateCardBack(pokemon) {
   const pokeBack = document.createElement("div")
   pokeBack.className = "cardFace back"
+
   const label = document.createElement("h4")
   label.textContent = "Abilities:"
   const abilityList = document.createElement("ul")
@@ -310,6 +317,7 @@ function populateCardBack(pokemon) {
     listItem.textContent = abilityItem.ability.name
     abilityList.appendChild(listItem)
   })
+
   const labelT = document.createElement("h4")
   labelT.textContent = "Type:"
   const pokeTypes = document.createElement("ol")
@@ -318,10 +326,26 @@ function populateCardBack(pokemon) {
     typeItem.textContent = pokeType.type.name
     pokeTypes.appendChild(typeItem)
   })
+
+  if (pokemon.stats) {
+    const pokeHP = document.createElement('h4')
+    pokeHP.textContent = `HP: ${pokemon.stats[0].base_stat}`
+    pokeBack.appendChild(pokeHP)
+  }
+
+  const pokeHeight = document.createElement('h4')
+  pokeHeight.textContent = `Height: ${pokemon.height}`
+
+  const pokeWeight = document.createElement('h4')
+  pokeWeight.textContent = `Weight: ${pokemon.weight}`
+
+  pokeBack.appendChild(pokeHeight)
+  pokeBack.appendChild(pokeWeight)
   pokeBack.appendChild(label)
   pokeBack.appendChild(abilityList)
   pokeBack.appendChild(labelT)
   pokeBack.appendChild(pokeTypes)
+
   typesBackground(pokemon, pokeBack)
   return pokeBack
 }
